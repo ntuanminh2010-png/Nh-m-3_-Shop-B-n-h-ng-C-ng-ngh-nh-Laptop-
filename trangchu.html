@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TECHNOVA — Catalog Apple được lựa chọn kỹ." />
+  <title>TECHNOVA — Apple được lựa chọn kỹ</title>
+
+  <style>
+    /* =========================================================
+       TECHNOVA — CSS dễ chỉnh sửa trong VS Code
+       ========================================================= */
+    :root {
+      --paper: #f5f1e9;
+      --paper-deep: #ebe5da;
+      --ink: #181818;
+      --ink-soft: #585651;
+      --line: #d9d4ca;
+      --acid: #c9ef3c;
+      --coral: #ff5b3d;
+      --radius: 16px;
+      --max-width: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: auto;
+    }
+
+    /* Header */
+    .announcement {
+      padding: 8px 16px;
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 241, 233, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 800;
+      letter-spacing: -.06em;
+    }
+
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px 8px 8px 2px;
+      background: var(--acid);
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--coral);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .cart-button,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 17px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cart-button {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button-primary {
+      background: var(--acid);
+      color: var(--ink);
+    }
+
+    .button-dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button:hover,
+    .cart-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Hero slideshow */
+    .hero {
+      overflow: hidden;
+      background: #080808;
+      color: var(--paper);
+    }
+
+    .hero-grid {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      align-items: center;
+      gap: 70px;
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      color: var(--ink-soft);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      color: var(--paper);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      font-weight: 700;
+      letter-spacing: -.07em;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin: 20px 0;
+      font-size: clamp(48px, 6vw, 84px);
+      line-height: .95;
+    }
+
+    .accent {
+      color: var(--coral);
+    }
+
+    .hero-copy p {
+      max-width: 470px;
+      color: #bbb7af;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .hero-media {
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 550px;
+      border-radius: 220px 220px 20px 20px;
+      object-fit: cover;
+      background: var(--paper-deep);
+      animation: heroIn .55s ease;
+    }
+
+    @keyframes heroIn {
+      from {
+        opacity: .2;
+        transform: scale(1.04);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .hero-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .hero-index {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 30px;
+    }
+
+    /* Section and catalog */
+    section {
+      padding: 84px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 8px 0 0;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: .98;
+    }
+
+    .section-heading p {
+      max-width: 440px;
+      color: var(--ink-soft);
+    }
+
+    .category-section {
+      background: #ece7de;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 155px;
+      overflow: hidden;
+      display: flex;
+      align-items: end;
+      padding: 20px;
+      border-radius: var(--radius);
+      isolation: isolate;
+    }
+
+    .category-card::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background: linear-gradient(0deg, rgba(0, 0, 0, .75), transparent);
+    }
+
+    .category-card img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category-card strong {
+      color: white;
+      font-size: 20px;
+    }
+
+    .catalog-toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+    }
+
+    .filters input,
+    .filters select {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px 14px;
+    }
+
+    .product-card {
+      min-width: 0;
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / .86;
+      border-radius: 14px;
+      background: #e5e0d6;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: var(--acid);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .quick-add {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--ink);
+      color: white;
+      font-size: 19px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      color: #8b877e;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .product-card h3 {
+      margin: 7px 0 4px;
+      font-size: 18px;
+    }
+
+    .product-card p {
+      overflow: hidden;
+      margin: 0 0 8px;
+      color: var(--ink-soft);
+      font-size: 12px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .price {
+      font-weight: 700;
+    }
+
+    /* Video, reviews and support */
+    .video-section {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .video-layout p {
+      color: #aaa59c;
+    }
+
+    .intro-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #111;
+    }
+
+    .reviews-section {
+      background: #ece7de;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .review-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .stars {
+      color: var(--coral);
+      letter-spacing: 3px;
+    }
+
+    .review-card p {
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .review-author {
+      margin-top: auto;
+      font-size: 12px;
+    }
+
+    .review-author small {
+      display: block;
+      margin-top: 3px;
+      color: #979187;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .support-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--paper-deep);
+    }
+
+    .support-card h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .support-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    /* Footer and payment methods */
+    footer {
+      padding: 70px 0 24px;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-grid p,
+    .footer-grid a,
+    .footer-grid small {
+      color: #aaa59c;
+      font-size: 13px;
+    }
+
+    .footer-grid a {
+      display: block;
+      margin: 8px 0;
+    }
+
+    .footer-grid a:hover {
+      color: var(--acid);
+    }
+
+    .payment-panel {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 50px;
+      padding: 24px 0;
+      border-top: 1px solid #44413d;
+      border-bottom: 1px solid #44413d;
+    }
+
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: end;
+    }
+
+    .payment-methods span {
+      padding: 9px 12px;
+      border: 1px solid #4b4843;
+      border-radius: 999px;
+      color: #ddd7ce;
+      font-size: 12px;
+    }
+
+    .copyright {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 18px;
+      color: #77726b;
+      font-size: 11px;
+    }
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .video-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        order: 1;
+      }
+
+      .hero-media {
+        order: 0;
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .hero-image {
+        height: 430px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      nav {
+        display: none;
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .hero-grid {
+        padding: 48px 0 60px;
+        gap: 36px;
+      }
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .hero-image {
+        height: 360px;
+        border-radius: 140px 140px 18px 18px;
+      }
+
+      .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .category-grid,
+      .review-grid,
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        gap: 22px 9px;
+      }
+
+      .product-card h3 {
+        font-size: 15px;
+      }
+
+      .filters {
+        flex-direction: column;
+      }
+
+      .filters input,
+      .filters select {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 16px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .payment-panel,
+      .copyright {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .payment-methods {
+        justify-content: start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <div class="announcement">Miễn phí giao hàng từ 500.000₫ · Đổi trả trong 14 ngày</div>
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="TECHNOVA trang chủ"><span class="logo-mark">T</span> TECHNOVA</a>
+      <nav aria-label="Điều hướng chính">
+        <a href="#top">Trang chủ</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#reviews">Nhận xét</a>
+        <a href="#support">Hỗ trợ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-button" type="button" onclick="scrollToCatalog()">Xem catalog <span
+            id="cart-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== HERO SLIDESHOW ===================== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">TECHNOVA / Apple ecosystem</div>
+          <h1>Nơi đổi mới công nghệ mở ra <span class="accent">những khả năng vô tận.</span></h1>
+          <p>Khám phá MacBook, iPhone, iPad, AirPods và Apple Watch được trình bày rõ ràng trong một catalog tối giản.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#catalog">Xem toàn bộ catalog</a>
+            <a href="#support">Cần hỗ trợ?</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img id="hero-image" class="hero-image"
+            src="https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202610261111"
+            alt="MacBook Air" />
+          <div id="hero-label" class="hero-label">MacBook Air<br />Apple, được lựa chọn kỹ</div>
+          <div id="hero-index" class="hero-index">01 / 03</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CATEGORIES ===================== -->
+    <section class="category-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">01 / Khám phá</div>
+            <h2>Tìm đúng góc của bạn</h2>
+          </div>
+          <p>Chín nhóm sản phẩm Apple, mỗi nhóm giải một nhu cầu rất riêng.</p>
+        </div>
+        <div class="category-grid">
+          <a class="category-card" href="#catalog" onclick="setCategory('MacBook')"><img
+              src="https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202610261111"
+              alt="MacBook" /><strong>MacBook</strong></a>
+          <a class="category-card" href="#catalog" onclick="setCategory('iPhone')"><img
+              src="https://www.apple.com/v/iphone-18-pro/e/images/meta/iphone-18-pro_overview__bl9no3txkonm_og.png?202611021140"
+              alt="iPhone" /><strong>iPhone</strong></a>
+          <a class="category-card" href="#catalog" onclick="setCategory('AirPods')"><img
+              src="https://www.apple.com/v/airpods-pro/t/images/meta/og__c0ceegchesom_overview.png?202609132104"
+              alt="AirPods" /><strong>AirPods</strong></a>
+          <a class="category-card" href="#catalog" onclick="setCategory('Màn hình')"><img
+              src="https://www.apple.com/v/studio-display/f/images/meta/studio-display_overview__cc7vair07fjm_og.png?202603261117"
+              alt="Màn hình Apple" /><strong>Màn hình Apple</strong></a>
+          <a class="category-card" href="#catalog" onclick="setCategory('Apple Watch')"><img
+              src="https://www.apple.com/assets-www/en_WW/watch/01_og/watch_og_9cde5b638.png"
+              alt="Apple Watch" /><strong>Apple Watch</strong></a>
+          <a class="category-card" href="#catalog" onclick="setCategory('iPad')"><img
+              src="https://www.apple.com/v/ipad-pro/aw/images/meta/ipad-pro_overview__bu4cql27diaa_og.png?202609021131"
+              alt="iPad" /><strong>iPad</strong></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FULL CATALOG ===================== -->
+    <section id="catalog">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">02 / Catalog Apple</div>
+            <h2>Tất cả sản phẩm <span class="accent">ở một nơi.</span></h2>
+          </div>
+          <p>Trang này hiển thị toàn bộ catalog, không bị chùng với riêng danh mục MacBook.</p>
+        </div>
+        <div class="catalog-toolbar"><strong id="product-total">18 sản phẩm</strong><span>MacBook, iPhone, iPad, AirPods
+            và nhiều hơn</span></div>
+        <div class="filters">
+          <input id="search-input" type="search" placeholder="Tìm sản phẩm..." aria-label="Tìm sản phẩm" />
+          <select id="category-filter" aria-label="Lọc theo danh mục">
+            <option value="all">Tất cả danh mục</option>
+          </select>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== VIDEO ===================== -->
+    <section class="video-section">
+      <div class="container video-layout">
+        <div>
+          <div class="eyebrow">03 / Video giới thiệu</div>
+          <h2>Mỗi thiết bị mở ra một cách sống mới.</h2>
+          <p>Video tự phát ở chế độ tắt tiếng. Bạn có thể bật âm thanh bằng controls khi muốn xem đầy đủ.</p>
+        </div>
+        <!-- Khi mở file trong VS Code, giữ file video ở client/public/technova-apple-ad.mp4 -->
+        <video class="intro-video" autoplay muted loop playsinline controls
+          poster="https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202610261111"
+          aria-label="Video giới thiệu TECHNOVA">
+          <source src="client/public/technova-apple-ad.mp4" type="video/mp4" />Trình duyệt không hỗ trợ video.
+        </video>
+      </div>
+    </section>
+
+    <!-- ===================== REVIEWS ===================== -->
+    <section id="reviews" class="reviews-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">04 / Nhận xét khách hàng</div>
+            <h2>Những trải nghiệm thật.</h2>
+          </div>
+          <p>Nhận xét mẫu để bạn có thể thay bằng phản hồi thực tế trong file HTML này.</p>
+        </div>
+        <div class="review-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Thông tin sản phẩm rõ ràng, hình ảnh sắc nét và đội ngũ tư vấn trả lời rất nhanh.”</p>
+            <div class="review-author"><strong>Minh Anh</strong><small>Đã mua MacBook Air</small></div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Mình thích cách TECHNOVA trình bày gọn, không gây áp lực và giúp mình chọn đúng sản phẩm.”</p>
+            <div class="review-author"><strong>Tuấn Khang</strong><small>Đã mua AirPods Pro</small></div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Từ lúc xem catalog đến lúc thêm sản phẩm vào giỏ đều mượt và dễ hiểu.”</p>
+            <div class="review-author"><strong>Hà Phương</strong><small>Đã mua iPhone</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SUPPORT ===================== -->
+    <section id="support">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">05 / Hỗ trợ</div>
+            <h2>Thông tin hỗ trợ rõ ràng.</h2>
+          </div>
+          <p>Shop chưa kết nối thanh toán thật; các thông tin dưới đây là nội dung mẫu có thể chỉnh sửa.</p>
+        </div>
+        <div class="support-grid">
+          <article class="support-card">
+            <h3>Gọi cho shop</h3>
+            <p><a href="tel:+842873002026">028 7300 2026</a><br />Thứ Hai – Thứ Sáu, 09:00 – 18:00</p>
+          </article>
+          <article class="support-card">
+            <h3>Địa chỉ shop</h3>
+            <p>Tầng 3, 18 Nguyễn Huệ,<br />Quận 1, TP. Hồ Chí Minh</p>
+          </article>
+          <article class="support-card">
+            <h3>Email hỗ trợ</h3>
+            <p><a href="mailto:hello@technova.example">hello@technova.example</a><br />Tư vấn sản phẩm và đơn hàng</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><span class="logo-mark">T</span> TECHNOVA</div>
+          <p>Hệ sinh thái Apple được lựa chọn kỹ cho nhịp sống hiện đại.</p>
+        </div>
+        <div>
+          <div class="eyebrow">Khám phá</div><a href="#catalog">Catalog đầy đủ</a><a href="#catalog"
+            onclick="setCategory('MacBook')">MacBook</a><a href="#catalog" onclick="setCategory('iPhone')">iPhone</a>
+        </div>
+        <div>
+          <div class="eyebrow">Hỗ trợ</div><a href="#support">Thông tin hỗ trợ</a><a href="#reviews">Nhận xét</a><a
+            href="mailto:hello@technova.example">Email shop</a>
+        </div>
+        <div>
+          <div class="eyebrow">Lưu ý</div>
+          <p>Đây là storefront demo. Chưa xử lý thanh toán thật.</p>
+        </div>
+      </div>
+      <div class="payment-panel">
+        <div>
+          <div class="eyebrow">Phương thức thanh toán</div><strong>Chọn phương thức phù hợp với bạn.</strong>
+        </div>
+        <div class="payment-methods"><span>Visa / Mastercard</span><span>Ví điện tử</span><span>Chuyển khoản ngân
+            hàng</span></div>
+      </div>
+      <div class="copyright"><span>© 2026 TECHNOVA</span><span>Made with intention in Việt Nam.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================================================
+       TECHNOVA — JavaScript kết nối Airtable API
+       ========================================================= */
+
+    // 1. Cấu hình Airtable API
+    const AIRTABLE_CONFIG = {
+      baseId: 'appaju0s4Np5TyrnQ',
+      table: 'product',
+      view: 'Grid view',
+      // Dán Personal Access Token của bạn vào đây:
+      token: 'dien_toekn_vao_day'
+    };
+
+    // 2. Bảng ánh xạ ID danh mục (catalog ID) sang Tên danh mục hiển thị
+    const CATALOG_MAP = {
+      'recwLBK78lB5Lqhny': 'MacBook',
+      'recyFM8SbTQ1vGKlo': 'iPhone'
+      // Bạn có thể bổ sung thêm các ID khác ở đây nếu có
+    };
+
+    // Hàm quy đổi danh mục (nếu ID chưa có trong map, tự nhận diện theo tên sản phẩm)
+    function resolveCategory(catalogVal, productName) {
+      let catalogStr = '';
+      if (Array.isArray(catalogVal) && catalogVal.length > 0) {
+        for (const item of catalogVal) {
+          if (CATALOG_MAP[item]) return CATALOG_MAP[item];
+          catalogStr += ' ' + item;
+        }
+      } else if (typeof catalogVal === 'string') {
+        if (CATALOG_MAP[catalogVal]) return CATALOG_MAP[catalogVal];
+        catalogStr = catalogVal;
+      }
+      const combined = (catalogStr + ' ' + (productName || '')).toLowerCase();
+      if (combined.includes('macbook')) return 'MacBook';
+      if (combined.includes('iphone')) return 'iPhone';
+      if (combined.includes('ipad')) return 'iPad';
+      if (combined.includes('airpods')) return 'AirPods';
+      if (combined.includes('watch')) return 'Apple Watch';
+      if (combined.includes('display') || combined.includes('màn hình')) return 'Màn hình';
+      if (combined.includes('homepod') || combined.includes('tv')) return 'Home & TV';
+      if (combined.includes('pencil') || combined.includes('keyboard') || combined.includes('chuột') || combined.includes('phụ kiện')) return 'Phụ kiện Apple';
+      return 'Khác';
+    }
+
+    // 3. Danh sách sản phẩm dự phòng (khi chưa cấu hình token hoặc khi mạng gặp sự cố)
+    let products = [
+
+    ];
+
+    // Chuyển đổi một bản ghi Airtable thành đối tượng hiển thị
+    function mapAirtableRecord(record) {
+      const f = record.fields || {};
+      const name = f.Name || 'Sản phẩm Apple';
+
+      // Xử lý ảnh: lấy liên kết đầu tiên trước dấu |
+      let imageUrl = 'https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202610261111';
+      if (f.image && typeof f.image === 'string') {
+        const parts = f.image.split('|');
+        if (parts[0] && parts[0].trim()) {
+          imageUrl = parts[0].trim();
+        }
+      }
+
+      // Điểm đánh giá
+      const rating = f.rating ? `★ ${f.rating.replace('/5', '')}` : '★ 4.9';
+
+      // Giá bán và giá khuyến mãi
+      const hasSale = Boolean(f.sale_price);
+      const displayPrice = f.sale_price || f.price || 'Liên hệ';
+      const originalPrice = hasSale && f.price ? f.price : null;
+
+      // Nhãn badge
+      const badge = hasSale ? 'Giảm giá' : (f.badge || 'Chính hãng');
+
+      return {
+        id: record.id,
+        name: name,
+        category: resolveCategory(f.catalog, name),
+        price: displayPrice,
+        originalPrice: originalPrice,
+        rating: rating,
+        image: imageUrl,
+        tagline: f.tagline || (hasSale ? 'Đang có ưu đãi đặc biệt.' : 'Apple, được lựa chọn kỹ.'),
+        badge: badge,
+        href: '#catalog'
+      };
+    }
+
+    const grid = document.getElementById('product-grid');
+    const searchInput = document.getElementById('search-input');
+    const categoryFilter = document.getElementById('category-filter');
+    const cartCount = document.getElementById('cart-count');
+    const savedCart = Number(localStorage.getItem('technova-editable-cart') || 0);
+    cartCount.textContent = savedCart;
+
+    // Cập nhật danh sách các lựa chọn trong thẻ lọc danh mục
+    function updateCategoryFilterOptions() {
+      const currentSelected = categoryFilter.value;
+      categoryFilter.innerHTML = '<option value="all">Tất cả danh mục</option>';
+      const categories = [...new Set(products.map(product => product.category))].filter(Boolean);
+      categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        if (category === currentSelected) option.selected = true;
+        categoryFilter.appendChild(option);
+      });
+    }
+
+    function renderProducts() {
+      const term = searchInput.value.toLowerCase().trim();
+      const category = categoryFilter.value;
+      const visible = products.filter(product => {
+        const matchesText = `${product.name} ${product.category} ${product.tagline || ''}`.toLowerCase().includes(term);
+        return matchesText && (category === 'all' || product.category === category);
+      });
+      document.getElementById('product-total').textContent = `${visible.length} sản phẩm`;
+
+      if (visible.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--ink-soft); padding: 40px 0;">Không tìm thấy sản phẩm phù hợp.</p>';
+        return;
+      }
+
+      grid.innerHTML = visible.map(product => `
+        <article class="product-card">
+          <div class="product-image">
+            <a href="${product.href}" aria-label="Xem chi tiết ${product.name}">
+              <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202610261111'" />
+              <span class="badge">${product.badge}</span>
+            </a>
+            <button class="quick-add" type="button" aria-label="Thêm ${product.name} vào giỏ" onclick="addToCart()">+</button>
+          </div>
+          <a class="product-details" href="${product.href}">
+            <div class="product-meta"><span>Apple</span><span>${product.rating}</span></div>
+            <h3>${product.name}</h3>
+            <p>${product.tagline}</p>
+            <div>
+              <strong class="price">${product.price}</strong>
+              ${product.originalPrice ? `<span style="text-decoration: line-through; color: #8b877e; font-size: 13px; margin-left: 6px;">${product.originalPrice}</span>` : ''}
+            </div>
+          </a>
+        </article>`).join('');
+    }
+
+    // Hàm gọi API Airtable và cập nhật vào trang
+    async function loadProductsFromAirtable() {
+      if (!AIRTABLE_CONFIG.token || AIRTABLE_CONFIG.token === 'YOUR_SECRET_API_TOKEN') {
+        console.info('[Airtable] Chưa cấu hình token thực tế. Đang hiển thị sản phẩm dự phòng.');
+        return;
+      }
+
+      // Thông báo đang nạp dữ liệu
+      grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--ink-soft); padding: 40px 0;">Đang kết nối và tải sản phẩm từ Airtable...</p>';
+
+      try {
+        let allRecords = [];
+        let offset = null;
+
+        // Tự động phân trang nếu có nhiều hơn 100 bản ghi
+        do {
+          const url = new URL(`https://api.airtable.com/v0/${AIRTABLE_CONFIG.baseId}/${encodeURIComponent(AIRTABLE_CONFIG.table)}`);
+          url.searchParams.set('view', AIRTABLE_CONFIG.view);
+          url.searchParams.set('pageSize', '100');
+          // Lọc không lấy các dòng trống (chưa có Name) từ Airtable
+          url.searchParams.set('filterByFormula', "NOT({Name} = '')");
+          if (offset) url.searchParams.set('offset', offset);
+
+          const response = await fetch(url, {
+            headers: {
+              'Authorization': `Bearer ${AIRTABLE_CONFIG.token}`
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`Airtable API HTTP ${response.status}: ${response.statusText}`);
+          }
+
+          const data = await response.json();
+          if (data.records && Array.isArray(data.records)) {
+            allRecords = allRecords.concat(data.records);
+          }
+          offset = data.offset;
+        } while (offset);
+
+        // Lọc kỹ thêm ở JavaScript để đảm bảo chỉ nhận những sản phẩm có Name hợp lệ
+        const validRecords = allRecords.filter(r => r.fields && r.fields.Name && r.fields.Name.trim());
+
+        if (validRecords.length > 0) {
+          products = validRecords.map(mapAirtableRecord);
+          updateCategoryFilterOptions();
+          renderProducts();
+          console.info(`[Airtable] Đã tải thành công ${products.length} sản phẩm thực tế!`);
+        } else {
+          console.warn('[Airtable] Không tìm thấy bản ghi sản phẩm hợp lệ.');
+        }
+      } catch (err) {
+        console.error('[Airtable] Lỗi khi nạp dữ liệu:', err);
+        grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--coral); padding: 20px 0;">Không thể tải dữ liệu từ Airtable. Đang dùng dữ liệu dự phòng...</p>';
+        setTimeout(() => {
+          renderProducts();
+        }, 1500);
+      }
+    }
+
+    function addToCart() {
+      const next = Number(localStorage.getItem('technova-editable-cart') || 0) + 1;
+      localStorage.setItem('technova-editable-cart', next);
+      cartCount.textContent = next;
+    }
+
+    function setCategory(category) {
+      categoryFilter.value = category;
+      renderProducts();
+    }
+
+    function scrollToCatalog() {
+      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    searchInput.addEventListener('input', renderProducts);
+    categoryFilter.addEventListener('change', renderProducts);
+
+    // Khởi tạo hiển thị ban đầu và kích hoạt tải từ Airtable
+    updateCategoryFilterOptions();
+    renderProducts();
+    loadProductsFromAirtable();
+
+    // Hero slideshow: đổi ảnh mỗi 4,5 giây.
+    const heroSlides = [
+      { name: 'MacBook Air', image: 'https://www.apple.com/v/macbook-air/z/images/meta/macbook_air_mx__ez5y0k5yy7au_og.png?202610261111' },
+      { name: 'MacBook Pro', image: 'https://www.apple.com/v/macbook-pro/a/images/meta/mbp_splitter__c9bpyxdvy6eu_og.png?202610271513' },
+      { name: 'iPhone 18 Pro', image: 'https://www.apple.com/v/iphone-18-pro/e/images/meta/iphone-18-pro_overview__bl9no3txkonm_og.png?202611021140' }
+    ];
+    let heroIndex = 0;
+    setInterval(() => {
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      const slide = heroSlides[heroIndex];
+      const image = document.getElementById('hero-image');
+      image.src = slide.image;
+      image.alt = slide.name;
+      image.style.animation = 'none';
+      void image.offsetWidth;
+      image.style.animation = 'heroIn .55s ease';
+      document.getElementById('hero-label').innerHTML = `${slide.name}<br />Apple, được lựa chọn kỹ`;
+      document.getElementById('hero-index').textContent = `0${heroIndex + 1} / 03`;
+    }, 4500);
+  </script>
+</body>
+
+</html>
